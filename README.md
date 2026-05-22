@@ -93,10 +93,15 @@ Through K-Means clustering, this project demonstrates how machine learning can s
 **_Repository Structure_**
 
 ├── data/
+
 ├── notebooks/
+
 ├── src/
+
 ├── outputs/
+
 ├── visualizations/
+
 └── README.md
 
 **_Future Improvements_**
