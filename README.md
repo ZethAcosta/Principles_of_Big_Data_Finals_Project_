@@ -1,11 +1,11 @@
 # Principles_of_Big_Data_Finals_Project
-Overview
+**_Overview_**
 
 This project explores the use of Machine Learning, specifically K-Means Clustering, in analyzing large-scale air pollution data. The study focuses on identifying pollution patterns, environmental trends, and recurring air-quality regimes from a large open-source dataset containing approximately 10 GB of environmental monitoring data.
 
 Air pollution is a major environmental and public health issue caused by industrial emissions, transportation activities, fossil fuel combustion, and other environmental factors. Due to the growing complexity and volume of air-quality monitoring data, traditional statistical methods alone are often insufficient for identifying meaningful patterns. This project applies unsupervised machine learning techniques to simplify and analyze complex environmental datasets.
 
-Objectives
+**_Objectives_**
 
 * Analyze large-scale air pollution datasets using machine learning techniques.
 * Apply K-Means clustering to identify pollution patterns and air-quality regimes.
@@ -13,18 +13,18 @@ Objectives
 * Identify recurring pollution episodes and environmental trends.
 * Demonstrate the application of unsupervised learning in real-world environmental analysis.
 
-Dataset
+**_Dataset_**
 
 This project uses an open-source air pollution dataset containing approximately 10 GB of monitoring data.
 
-The dataset includes:
+**_The dataset includes:_**
 
 * Pollutant concentrations (e.g., PM2.5, PM10, NO2, O3)
 * Environmental and atmospheric variables
 * Long-term monitoring observations
 * Multiple monitoring locations and temporal records
 
-Technologies Used
+**_Technologies Used_**
 
 * Python
 * Pandas
@@ -34,7 +34,7 @@ Technologies Used
 * Seaborn
 * Google Colab / Jupyter Notebook
 
-Machine Learning Method
+**_Machine Learning Method_**
 
 K-Means Clustering
 
@@ -47,7 +47,7 @@ In this project, K-Means clustering is used to:
 * Group environmental observations with similar characteristics
 * Simplify high-dimensional air-quality data
 
-Project Workflow
+**_Project Workflow_**
 
 1. Data Collection
     * Load the open-source air pollution dataset.
@@ -66,13 +66,13 @@ Project Workflow
     * Generate cluster visualizations
     * Interpret pollution regimes and environmental patterns
 
-Motivation
+**_Motivation_**
 
 Air pollution remains a growing environmental and public health concern due to industrialization, urbanization, and transportation activities. The increasing volume of environmental monitoring data has created a need for intelligent and scalable analytical approaches.
 
 This project is motivated by the potential of machine learning techniques such as K-Means clustering to identify hidden structures and recurring pollution patterns within large-scale environmental datasets.
 
-Real-World Relevance
+**_Real-World Relevance_**
 
 Real-world air pollution is influenced by multiple interconnected factors such as weather conditions, industrial emissions, traffic density, and seasonal variation. These factors create complex and high-dimensional datasets that are difficult to interpret manually.
 
@@ -83,14 +83,14 @@ Through K-Means clustering, this project demonstrates how machine learning can s
 * Public health studies
 * Data-driven environmental decision-making
 
-Expected Outputs
+**_Expected Outputs_**
 
 * Clustered air pollution data
 * Visualizations of pollution regimes
 * Identification of recurring environmental patterns
 * Insights into pollutant behavior and environmental trends
 
-Repository Structure
+**_Repository Structure_**
 
 ├── data/
 ├── notebooks/
@@ -99,17 +99,17 @@ Repository Structure
 ├── visualizations/
 └── README.md
 
-Future Improvements
+**_Future Improvements_**
 
 * Integrate real-time air-quality monitoring data
 * Compare K-Means with other clustering algorithms such as DBSCAN and Gaussian Mixture Models
 * Apply dimensionality reduction techniques such as PCA
 * Develop predictive models for air-quality forecasting
 
-Researchers
+**_Researchers_**
 
 This project was developed as part of a research study on the application of machine learning in air pollution analysis.
 
-License
+**_License_**
 
 This project is intended for academic and educational purposes.
