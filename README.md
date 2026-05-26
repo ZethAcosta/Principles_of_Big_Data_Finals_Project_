@@ -1,120 +1,129 @@
-# Principles_of_Big_Data_Finals_Project
-**_Overview_**
+Air Pollution Clustering using K-Means
 
-This project explores the use of Machine Learning, specifically K-Means Clustering, in analyzing large-scale air pollution data. The study focuses on identifying pollution patterns, environmental trends, and recurring air-quality regimes from a large open-source dataset containing approximately 10 GB of environmental monitoring data.
+This project uses K-Means Clustering and PCA to analyze air pollution and weather data from Spain. The goal is to identify pollution patterns and environmental risk groups using machine learning.  ￼
 
-Air pollution is a major environmental and public health issue caused by industrial emissions, transportation activities, fossil fuel combustion, and other environmental factors. Due to the growing complexity and volume of air-quality monitoring data, traditional statistical methods alone are often insufficient for identifying meaningful patterns. This project applies unsupervised machine learning techniques to simplify and analyze complex environmental datasets.
+⸻
 
-**_Objectives_**
+Dataset
 
-* Analyze large-scale air pollution datasets using machine learning techniques.
-* Apply K-Means clustering to identify pollution patterns and air-quality regimes.
-* Group monitoring data based on similarities in pollutant concentrations.
-* Identify recurring pollution episodes and environmental trends.
-* Demonstrate the application of unsupervised learning in real-world environmental analysis.
+Dataset Source:
+Hugging Face METRAQ Air Quality Dataset￼
 
-**_Dataset_**
+The dataset contains:
 
-This project uses an open-source air pollution dataset containing approximately 10 GB of monitoring data.
+* Air pollution measurements
+* Temperature
+* Humidity
+* Wind speed
+* Wind direction
+* Atmospheric pressure
 
-**_The dataset includes:_**
+⸻
 
-* Pollutant concentrations (e.g., PM2.5, PM10, NO2, O3)
-* Environmental and atmospheric variables
-* Long-term monitoring observations
-* Multiple monitoring locations and temporal records
-
-**_Technologies Used_**
+Tools Used
 
 * Python
+* PySpark
+* Scikit-Learn
 * Pandas
-* NumPy
-* Scikit-learn
 * Matplotlib
 * Seaborn
-* Google Colab / Jupyter Notebook
+* Google Colab
 
-**_Machine Learning Method_**
+⸻
 
-K-Means Clustering
+How to Run the Project
 
-K-Means is an unsupervised machine learning algorithm used to group similar data points into clusters based on feature similarity.
+1. Install Dependencies
 
-In this project, K-Means clustering is used to:
+pip install pyspark pandas numpy matplotlib seaborn scikit-learn
 
-* Identify similar pollution profiles
-* Detect recurring pollution regimes
-* Group environmental observations with similar characteristics
-* Simplify high-dimensional air-quality data
+⸻
 
-**_Project Workflow_**
+2. Mount Google Drive (Google Colab)
 
-1. Data Collection
-    * Load the open-source air pollution dataset.
-2. Data Preprocessing
-    * Handle missing values
-    * Normalize numerical features
-    * Prepare data for clustering
-3. Exploratory Data Analysis
-    * Visualize pollutant distributions
-    * Analyze trends and correlations
-4. Clustering
-    * Apply K-Means clustering
-    * Determine optimal number of clusters
-    * Analyze cluster behavior
-5. Visualization and Interpretation
-    * Generate cluster visualizations
-    * Interpret pollution regimes and environmental patterns
+from google.colab import drive
+drive.mount('/content/drive')
 
-**_Motivation_**
+⸻
 
-Air pollution remains a growing environmental and public health concern due to industrialization, urbanization, and transportation activities. The increasing volume of environmental monitoring data has created a need for intelligent and scalable analytical approaches.
+3. Start PySpark
 
-This project is motivated by the potential of machine learning techniques such as K-Means clustering to identify hidden structures and recurring pollution patterns within large-scale environmental datasets.
+from pyspark.sql import SparkSession
+spark = SparkSession.builder \
+    .appName("AirPollutionKMeans") \
+    .getOrCreate()
 
-**_Real-World Relevance_**
+⸻
 
-Real-world air pollution is influenced by multiple interconnected factors such as weather conditions, industrial emissions, traffic density, and seasonal variation. These factors create complex and high-dimensional datasets that are difficult to interpret manually.
+4. Load the Dataset
 
-Through K-Means clustering, this project demonstrates how machine learning can support:
+df = spark.read.csv(
+    "/content/drive/MyDrive/BigDataProject/air_quality_data.csv",
+    header=True,
+    inferSchema=True
+)
+df.show(5)
 
-* Environmental monitoring
-* Pollution pattern analysis
-* Public health studies
-* Data-driven environmental decision-making
+⸻
 
-**_Expected Outputs_**
+Data Preprocessing
 
-* Clustered air pollution data
-* Visualizations of pollution regimes
-* Identification of recurring environmental patterns
-* Insights into pollutant behavior and environmental trends
+The project performs:
 
-**_Repository Structure_**
+* Removing null values
+* Cleaning data
+* Feature scaling
+* Feature engineering
+* PCA dimensionality reduction
 
-├── data/
+Example:
 
-├── notebooks/
+df_clean = df.dropna()
 
-├── src/
+⸻
 
-├── outputs/
+Run K-Means Clustering
 
-├── visualizations/
+from pyspark.ml.clustering import KMeans
+kmeans = KMeans(k=4, seed=42)
+model = kmeans.fit(data)
+predictions = model.transform(data)
 
-└── README.md
+⸻
 
-**_Future Improvements_**
+Visualizations
 
-* Integrate real-time air-quality monitoring data
-* Compare K-Means with other clustering algorithms such as DBSCAN and Gaussian Mixture Models
-* Apply dimensionality reduction techniques such as PCA
-* Develop predictive models for air-quality forecasting
+The project includes:
 
-**_Researchers_**
+* Elbow Method
+* Silhouette Analysis
+* PCA Cluster Visualization
+* Sensitivity Analysis
 
-This project was developed as part of a research study on the application of machine learning in air pollution analysis.
+These help evaluate cluster quality and pollution patterns.
 
-**_License_**
+⸻
 
-This project is intended for academic and educational purposes.
+Key Findings
+
+* The optimal number of clusters was K = 4
+* K-Means successfully grouped pollution patterns
+* PCA helped visualize pollution behavior
+* K-Means was sensitive to random initialization seeds
+
+￼
+
+⸻
+
+Researchers
+
+* Raphael Zeth Acosta
+* Darrie Andrei Dizon
+* Milaine Antonelle Dumpit
+* Zane Orilla
+
+University of Santo Tomas
+Department of Mathematics and Physics
+
+￼
