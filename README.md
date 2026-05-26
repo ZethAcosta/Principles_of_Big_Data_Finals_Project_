@@ -45,18 +45,31 @@ The dataset contains:
 Project Structure
 
 ├── data/
+
 │   └── air_quality_data.csv
+
 │
+
 ├── notebooks/
+
 │   └── BIG_DATA_KMeans_Code.ipynb
+
 │
+
 ├── outputs/
+
 │   ├── elbow_method.png
+
 │   ├── silhouette_analysis.png
+
 │   ├── pca_clusters.png
+
 │   └── sensitivity_analysis.png
+
 │
+
 ├── README.md
+
 └── requirements.txt
 
 ⸻
