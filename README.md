@@ -68,13 +68,11 @@ Installation
 git clone https://github.com/yourusername/air-pollution-kmeans.git
 cd air-pollution-kmeans
 
-⸻
 
 2. Install Dependencies
 
 pip install pyspark pandas numpy matplotlib seaborn scikit-learn
 
-⸻
 
 Running the Project
 
